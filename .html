@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Women's Day Meghashree</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+text-align:center;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+color:white;
+overflow:hidden;
+}
+
+/* Opening screen */
+
+.startScreen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+z-index:10;
+}
+
+.startScreen button{
+padding:18px 40px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4e7a;
+cursor:pointer;
+}
+
+/* Main content */
+
+.container{
+margin-top:120px;
+display:none;
+}
+
+h1{
+font-size:50px;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 10px white;}
+to{ text-shadow:0 0 30px pink;}
+}
+
+.message{
+width:70%;
+margin:auto;
+font-size:20px;
+line-height:1.6;
+margin-top:20px;
+}
+
+button.surpriseBtn{
+margin-top:30px;
+padding:15px 30px;
+font-size:18px;
+border:none;
+border-radius:25px;
+background:white;
+color:#ff4e7a;
+cursor:pointer;
+}
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation:fall 6s linear infinite;
+}
+
+@keyframes fall{
+0%{ transform:translateY(-100px); opacity:1;}
+100%{ transform:translateY(100vh); opacity:0;}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="startScreen">
+<h2>🌸 A Small Surprise For You 🌸</h2>
+<button onclick="openMessage()">Open Message 💌</button>
+</div>
+
+<audio id="music" loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4c9e0f1c7d.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container" id="mainContent">
+
+<h1>Happy Women's Day Meghashree 🌸</h1>
+
+<div class="message">
+
+Meghashree,
+
+On this special day I just wanted to remind you how amazing you truly are.  
+Some people walk into our lives quietly but leave a beautiful impact without even realizing it. You are one of those rare souls.
+
+Your kindness, your strength, your smile, and the way you carry yourself make the world around you brighter. There is something special about you that can't really be explained in words.
+
+Today is International Women's Day, a day to celebrate the strength, beauty, and brilliance of women everywhere. But honestly, someone like you deserves appreciation not just today, but every single day.
+
+You inspire people more than you probably know. Your presence brings calm, positivity, and a certain warmth that is very rare in this world.
+
+So today I just wanted to say — never forget how valuable and wonderful you are. Keep shining, keep smiling, and keep being the incredible person that you are.
+
+And somewhere out there, someone silently admires your presence and wishes you nothing but happiness and success in everything you do.
+
+Happy Women's Day once again, Meghashree. 🌹
+
+</div>
+
+<button class="surpriseBtn" onclick="surprise()">Click for a Surprise 💝</button>
+
+</div>
+
+<script>
+
+const music=document.getElementById("music");
+
+function openMessage(){
+
+document.querySelector(".startScreen").style.display="none";
+document.getElementById("mainContent").style.display="block";
+
+music.play();
+
+}
+
+function surprise(){
+alert("Meghashree, you are truly special. Never forget that. 🌸\n\n— Noor");
+}
+
+function createHeart(){
+const heart=document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},6000);
+}
+
+setInterval(createHeart,300);
+
+</script>
+
+</body>
+</html>
